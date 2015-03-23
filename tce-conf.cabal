@@ -1,0 +1,42 @@
+name:                tce-conf
+version:             1.0
+cabal-version:       >= 1.8
+build-type:          Simple
+license:             BSD3
+license-file:        LICENSE
+copyright:           2015 Dino Morelli
+author:              Dino Morelli
+maintainer:          Dino Morelli <dino@ui3.info>
+stability:           experimental
+homepage:            http://hub.darcs.net/dino/tce-conf
+synopsis:            Very simple config file reading
+description:         This package contains a module for reading very simple config files of the key=value style. It supports blank lines and # comments, but nothing else. The data is exposed as a Map
+category:            Configuration
+tested-with:         GHC >= 7.8.4
+extra-source-files:  changelog.md
+                     doc/dev/notes
+                     README.md
+                     testsuite/*.hs
+                     TODO
+                     util/gentags.sh
+                     util/prefs/boring
+
+source-repository    head
+   type:             darcs
+   location:         http://hub.darcs.net/dino/tce-conf
+
+library
+   exposed-modules:  TCE.Data.SimpleConf
+   hs-source-dirs:   src
+   build-depends:    base >= 3 && < 5,
+                     containers
+   ghc-options:      -Wall
+
+test-suite           test-hsmisc
+   type:             exitcode-stdio-1.0
+   main-is:          test-hsmisc.hs
+   hs-source-dirs:   src testsuite
+   build-depends:    base >= 3 && < 5,
+                     containers,
+                     HUnit
+   ghc-options:      -Wall
