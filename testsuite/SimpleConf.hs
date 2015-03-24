@@ -28,18 +28,19 @@ configFileContents = init $ unlines
    , ""
    , "bar"
    , "baz-blorp=2"
+   , "qux = false"
    ]
 
 
 testParseToMap :: Test
 testParseToMap = TestCase $
    assertEqual "parseToMap"
-      (fromList [("bar",""),("baz-blorp","2"),("foo","one")])
+      (fromList [("bar",""),("baz-blorp","2"),("foo","one"),("qux","false")])
       (parseToMap configFileContents)
 
 
 testParseToArgs :: Test
 testParseToArgs = TestCase $
    assertEqual "parseToArgs"
-      ["--foo=one","--bar","--baz-blorp=2"]
+      ["--foo=one","--bar","--baz-blorp=2","--qux=false"]
       (parseToArgs configFileContents)

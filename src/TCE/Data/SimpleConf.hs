@@ -39,11 +39,14 @@ type ConfMap = Map String String
    >
    >  bar
    >  baz-blorp=2
+   >
+   >  # spaces are permitted around the =
+   >  qux = false
    >  --- file end ---
 
    becomes:
 
-   >  fromList [("foo","one"),("bar",""),("baz-blorp","2")]
+   >  fromList [("foo","one"),("bar",""),("baz-blorp","2"),("qux","false")]
 
    Comments (prefixed with #) and blank lines in the config file 
    are discarded.
@@ -55,13 +58,20 @@ parseToMap = fromList . catMaybes . map parseKV . lines
 parseKV :: String -> Maybe (String, String)
 parseKV ('#' : _) = Nothing
 parseKV ""        = Nothing
-parseKV l         = Just (takeWhile p l, tailSafe $ dropWhile p l)
+parseKV l         = Just
+   ( strip . takeWhile p $ l
+   , strip . tailSafe . dropWhile p $ l
+   )
    where p = (/= '=')
 
 
 tailSafe :: [a] -> [a]
 tailSafe [] = []
 tailSafe l  = tail l
+
+
+strip = strip' . strip'
+   where strip' = reverse . dropWhile (== ' ')
 
 
 {- |
@@ -81,11 +91,14 @@ tailSafe l  = tail l
    >
    >  bar
    >  baz-blorp=2
+   >
+   >  # spaces are permitted around the =
+   >  qux = false
    >  --- file end ---
 
    becomes:
 
-   >  [ "--foo=one", "--bar", "--baz-blorp=2" ]
+   >  [ "--foo=one", "--bar", "--baz-blorp=2", "--qux=false" ]
 
    As above, comments (prefixed with #) and blank lines in the config 
    file are discarded.
