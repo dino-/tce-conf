@@ -20,6 +20,7 @@ module TCE.Data.SimpleConf
    )
    where
 
+import Data.Char ( isSpace )
 import Data.Map hiding ( map )
 import Data.Maybe ( catMaybes )
 
@@ -59,8 +60,8 @@ parseKV :: String -> Maybe (String, String)
 parseKV ('#' : _) = Nothing
 parseKV ""        = Nothing
 parseKV l         = Just
-   ( strip . takeWhile p $ l
-   , strip . tailSafe . dropWhile p $ l
+   ( trim . takeWhile p $ l
+   , trim . tailSafe . dropWhile p $ l
    )
    where p = (/= '=')
 
@@ -70,8 +71,13 @@ tailSafe [] = []
 tailSafe l  = tail l
 
 
-strip = strip' . strip'
-   where strip' = reverse . dropWhile (== ' ')
+dropFromTailWhile _ [] = []
+dropFromTailWhile p s
+  | p (last s) = dropFromTailWhile p $ init s
+  | otherwise      = s
+
+trim :: String -> String
+trim = dropFromTailWhile isSpace . dropWhile isSpace
 
 
 {- |
