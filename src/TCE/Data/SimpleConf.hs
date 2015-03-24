@@ -74,7 +74,8 @@ tailSafe l  = tail l
 dropFromTailWhile _ [] = []
 dropFromTailWhile p s
   | p (last s) = dropFromTailWhile p $ init s
-  | otherwise      = s
+  | otherwise  = s
+
 
 trim :: String -> String
 trim = dropFromTailWhile isSpace . dropWhile isSpace
