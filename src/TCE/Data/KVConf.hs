@@ -71,6 +71,7 @@ tailSafe [] = []
 tailSafe l  = tail l
 
 
+dropFromTailWhile :: (a -> Bool) -> [a] -> [a]
 dropFromTailWhile _ [] = []
 dropFromTailWhile p s
   | p (last s) = dropFromTailWhile p $ init s
