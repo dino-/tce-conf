@@ -2,7 +2,7 @@
 -- Author: Dino Morelli <dino@ui3.info>
 
 {- |
-   Simple functions for loading config files
+   Simple key/value style config file loading
 
    This module was motived by the desire to factor this repetitive 
    configuration file parsing code out of several of my projects.
@@ -13,8 +13,8 @@
    suggest Data.ConfigFile 
    <http://hackage.haskell.org/package/ConfigFile>.
 -}
-module TCE.Data.SimpleConf
-   ( ConfMap
+module TCE.Data.KVConf
+   ( KVConf
    , parseToMap
    , parseToArgs
    )
@@ -26,7 +26,7 @@ import Data.Maybe ( catMaybes )
 
 
 -- | Convenience type synonym. Config data is just a simple Map
-type ConfMap = Map String String
+type KVConf = Map String String
 
 
 {- |
@@ -52,7 +52,7 @@ type ConfMap = Map String String
    Comments (prefixed with #) and blank lines in the config file 
    are discarded.
 -}
-parseToMap :: String -> ConfMap
+parseToMap :: String -> KVConf
 parseToMap = fromList . catMaybes . map parseKV . lines
 
 

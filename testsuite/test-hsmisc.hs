@@ -4,7 +4,7 @@
 import System.Exit
 import Test.HUnit hiding ( counts )
 
-import qualified SimpleConf
+import qualified KVConf
 
 
 main :: IO ()
@@ -24,5 +24,5 @@ testsPassed (Counts _ _ e f) = (e == 0) && (f == 0)
 
 tests :: Test
 tests = TestList
-   [ SimpleConf.tests
+   [ KVConf.tests
    ]

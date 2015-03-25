@@ -1,7 +1,7 @@
 -- License: BSD3 (see LICENSE)
 -- Author: Dino Morelli <dino@ui3.info>
 
-module SimpleConf
+module KVConf
    ( tests )
    where
 
@@ -11,7 +11,7 @@ import Test.HUnit
    , assertEqual
    )
 
-import TCE.Data.SimpleConf ( parseToArgs, parseToMap )
+import TCE.Data.KVConf ( parseToArgs, parseToMap )
 
 
 tests :: Test
