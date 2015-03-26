@@ -27,6 +27,7 @@ source-repository    head
 
 library
    exposed-modules:  TCE.Data.KVConf
+                     TCE.Data.ReadConf
    hs-source-dirs:   src
    build-depends:    base >= 3 && < 5,
                      containers

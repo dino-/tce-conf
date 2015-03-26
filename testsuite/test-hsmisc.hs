@@ -5,6 +5,7 @@ import System.Exit
 import Test.HUnit hiding ( counts )
 
 import qualified KVConf
+import qualified ReadConf
 
 
 main :: IO ()
@@ -25,4 +26,5 @@ testsPassed (Counts _ _ e f) = (e == 0) && (f == 0)
 tests :: Test
 tests = TestList
    [ KVConf.tests
+   , ReadConf.tests
    ]
