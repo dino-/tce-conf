@@ -49,7 +49,7 @@
 ^\.cabal-sandbox(/|$)
 cabal\.sandbox\.config
 # standard cabal build dir, might not be boring for everybody
-^dist(/|$)
+(^|/)dist(/|$)
 # autotools
 (^|/)autom4te\.cache($|/)
 (^|/)config\.(log|status)$
