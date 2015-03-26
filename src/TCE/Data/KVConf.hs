@@ -12,6 +12,20 @@
    building and saving config data and .ini-style [section]s, may I 
    suggest Data.ConfigFile 
    <http://hackage.haskell.org/package/ConfigFile>.
+
+   Example:
+
+>     import Data.Map ( lookup )
+>     import Prelude hiding ( lookup )
+>     import TCE.Data.KVConf ( parseToMap )
+>     
+>     main = do
+>        conf <- parseToMap `fmap` readFile "example.conf"
+>        print $ lookup "someKey" conf
+>        print $ lookup "another-key" conf
+
+   An example config file is given below.
+
 -}
 module TCE.Data.KVConf
    ( KVConf
