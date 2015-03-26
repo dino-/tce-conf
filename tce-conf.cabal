@@ -10,7 +10,7 @@ maintainer:          Dino Morelli <dino@ui3.info>
 stability:           experimental
 homepage:            http://hub.darcs.net/dino/tce-conf
 synopsis:            Very simple config file reading
-description:         This package contains a module for reading very simple config files of the key=value style. It supports blank lines and # comments, but nothing else. The data is exposed as a Map
+description:         This package contains modules for reading very simple config files of the key=value style or as a Haskell data structure serialized with Show style. The modules support files with blank lines and simple single-line comments, but nothing else.
 category:            Configuration
 tested-with:         GHC >= 7.8.4
 extra-source-files:  changelog.md
