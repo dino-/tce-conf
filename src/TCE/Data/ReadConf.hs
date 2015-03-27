@@ -7,7 +7,7 @@
 
    This is handy for the case where you need a strongly-typed,
    possibly hierarchical configuration. It's not a revolutionary idea
-   to use Read deserialization of a text file but I found it handy
+   to use Read deserialization of a text file but I found it useful
    to support comments and also wrapping possible failure in Either.
 
    Example:
