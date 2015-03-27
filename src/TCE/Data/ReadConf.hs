@@ -9,6 +9,43 @@
    possibly hierarchical configuration. It's not a revolutionary idea
    to use Read deserialization of a text file but I found it handy
    to support comments and also wrapping possible failure in Either.
+
+   Example:
+
+>     import TCE.Data.ReadConf ( readConfig )
+>     
+>     data Config = Config
+>        { foo :: String
+>        , bar :: Int
+>        , baz :: [String]
+>        , qux :: Bool
+>        }
+>        deriving Read
+>     
+>     main = do
+>        econf <- readConfig `fmap` readFile "file.conf"
+>        either print
+>           (\c -> (print $ bar c) >> (print $ qux c))
+>           econf
+
+   And then file.conf could contain this Haskell source code:
+
+>     -- An example config file
+>     
+>     Config
+>        { foo = "some data"
+>     
+>        --, bar = 42
+>        , bar = 42
+>     
+>        , baz =
+>           [ "dogs"
+>           , "cats"
+>           ]
+>     
+>        , qux = True
+>        }
+
 -}
 module TCE.Data.ReadConf
    ( readConfig )

@@ -8,9 +8,46 @@ Very simple config file reading
 
 ## Description
 
-This package contains a module for reading very simple config files
-of the key=value style. It supports blank lines and # comments,
-but nothing else. The data is exposed as a Map
+This package contains modules for reading very simple config files
+of the `key=value` style or as a Haskell data structure to be
+deserialized with `Read`. The modules support files with blank
+lines and simple single-line comments, but nothing else.
+
+### KVConf
+
+Pros
+
+- Well-known `key=value` system
+- Adding new entries doesn't necessarily mean code changes as they
+  are stored in a Map
+
+Cons
+
+- Simulating hierarchies requires hacky key syntax with dots or
+  what-have-you
+- All values are `String` and so may as well be untyped. Conversion
+  to other types will be required by users of the library.
+- Only single-line comments supported at this time, with #
+- No support for INI sections or variable substitution
+
+
+### ReadConf
+
+Pros
+
+- Config files are strongly typed Haskell source code. `Read`
+  instancing takes care of everything!
+- Can easily support hierarchical data because Haskell data types
+  do so
+
+Cons
+
+- Config files must adhere to Haskell source syntax (may not be a
+  con for some)
+- Changing the config file at all requires code changes to keep
+  the types synced with each other.
+- Only single-line comments supported at this time, with --
+- No support for variable substitution
 
 
 ## Getting source
