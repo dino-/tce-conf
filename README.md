@@ -8,25 +8,25 @@ Very simple config file reading
 
 ## Description
 
-This package contains modules for reading very simple config files
-of the `key=value` style or as a Haskell data structure to be
-deserialized with `Read`. The modules support files with blank
-lines and simple single-line comments, but nothing else.
+This package contains modules for runtime reading of very simple
+config files of the `key=value` style or as a Haskell data structure
+to be deserialized with `Read`. The modules support files with
+blank lines and simple single-line comments, but nothing else.
 
 ### KVConf
 
 Pros
 
-- Well-known `key=value` system
+- Well-known `key=value` config file syntax
 - Adding new entries doesn't necessarily mean code changes as they
   are stored in a Map
 
 Cons
 
-- Simulating hierarchies requires hacky key syntax with dots or
-  what-have-you
 - All values are `String` and so may as well be untyped. Conversion
   to other types will be required by users of the library.
+- Simulating hierarchies requires hacky key syntax with dots or
+  what-have-you
 - Only single-line comments supported at this time, with #
 - No support for INI sections or variable substitution
 
