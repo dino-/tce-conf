@@ -17,7 +17,7 @@ extra-source-files:  changelog.md
                      doc/dev/notes
                      README.md
                      testsuite/*.hs
-                     TODO
+                     TODO.md
                      util/gentags.sh
                      util/prefs/boring
 
