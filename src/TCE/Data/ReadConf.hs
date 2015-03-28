@@ -12,19 +12,25 @@
 
    Example:
 
+
 >     import TCE.Data.ReadConf ( readConfig )
 >     
+>     -- Write your own custom data structure for config, like this:
 >     data Config = Config
 >        { foo :: String
 >        , bar :: Int
 >        , baz :: [String]
 >        , qux :: Bool
 >        }
->        deriving Read
+>        deriving Read  -- Make it an instance of Read
 >     
 >     main = do
->        econf <- readConfig `fmap` readFile "file.conf"
->        either print
+>        -- Parse a String containing a single instance of the above data type
+>        econf <- readConfig `fmap` readFile "read-example.conf"
+>     
+>        -- The result is an Either String Config
+>        either
+>           print  -- Failure is reported as a Left
 >           (\c -> (print $ bar c) >> (print $ qux c))
 >           econf
 
@@ -35,7 +41,7 @@
 >     Config
 >        { foo = "some data"
 >     
->        --, bar = 42
+>        --, bar = 0
 >        , bar = 42
 >     
 >        , baz =

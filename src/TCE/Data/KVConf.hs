@@ -20,7 +20,10 @@
 >     import TCE.Data.KVConf ( parseToMap )
 >     
 >     main = do
->        conf <- parseToMap `fmap` readFile "file.conf"
+>        -- Parse a String into a KVConf datatype
+>        conf <- parseToMap `fmap` readFile "kv-example.conf"
+>     
+>        -- It's just a map, so use Data.Map functions to access
 >        print $ lookup "foo" conf
 >        print $ lookup "baz-blorp" conf
 
