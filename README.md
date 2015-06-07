@@ -3,7 +3,7 @@
 
 ## Synopsis
 
-Very simple config file reading
+Very simple config file reading (Haskell)
 
 
 ## Description
