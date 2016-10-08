@@ -11,7 +11,7 @@ data Config = Config
 
 main = do
    -- Parse a String containing a single instance of the above data type
-   econf <- readConfig `fmap` readFile "read-example.conf"
+   econf <- readConfig `fmap` readFile "resources/read-example.conf"
 
    -- The result is an Either String Config
    either

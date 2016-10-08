@@ -15,12 +15,6 @@ category:            Configuration
 tested-with:         GHC >= 8.0.1
 extra-source-files:  changelog.md
                      doc/dev/notes
-                     doc/examples/examples.cabal
-                     doc/examples/KVConf-example.hs
-                     doc/examples/kv-example.conf
-                     doc/examples/ReadConf-example.hs
-                     doc/examples/read-example.conf
-                     doc/examples/Setup.hs
                      README.md
                      testsuite/*.hs
                      TODO.md
@@ -50,3 +44,19 @@ test-suite           test-hsmisc
                      ReadConf
                      TCE.Data.KVConf
                      TCE.Data.ReadConf
+
+executable KVConf-example
+  hs-source-dirs:      app
+  main-is:             KVConf-example.hs
+  build-depends:         base >= 3 && < 5
+                       , containers
+                       , tce-conf
+  default-language:    Haskell2010
+
+executable ReadConf-example
+  hs-source-dirs:      app
+  main-is:             ReadConf-example.hs
+  build-depends:         base >= 3 && < 5
+                       , containers
+                       , tce-conf
+  default-language:    Haskell2010
