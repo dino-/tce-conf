@@ -9,14 +9,14 @@ cabal-version:       >=1.10
 
 executable KVConf-example
   main-is:             KVConf-example.hs
-  build-depends:         base >=4.7 && <4.8
+  build-depends:         base >= 3 && < 5
                        , containers
                        , tce-conf
   default-language:    Haskell2010
 
 executable ReadConf-example
   main-is:             ReadConf-example.hs
-  build-depends:         base >=4.7 && <4.8
+  build-depends:         base >= 3 && < 5
                        , containers
                        , tce-conf
   default-language:    Haskell2010

@@ -15,11 +15,16 @@ category:            Configuration
 tested-with:         GHC >= 7.8.4
 extra-source-files:  changelog.md
                      doc/dev/notes
+                     doc/examples/examples.cabal
+                     doc/examples/KVConf-example.hs
+                     doc/examples/kv-example.conf
+                     doc/examples/ReadConf-example.hs
+                     doc/examples/read-example.conf
+                     doc/examples/Setup.hs
                      README.md
                      testsuite/*.hs
                      TODO.md
                      util/gentags.sh
-                     util/prefs/boring
 
 source-repository    head
    type:             darcs
@@ -41,3 +46,7 @@ test-suite           test-hsmisc
                      containers,
                      HUnit
    ghc-options:      -Wall
+   other-modules:    KVConf
+                     ReadConf
+                     TCE.Data.KVConf
+                     TCE.Data.ReadConf
