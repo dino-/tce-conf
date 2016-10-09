@@ -1,3 +1,18 @@
+1.2 (2016-10-09)
+
+  * Fixed cabal file for use with stack sdist
+  * Fixed cabal file formatting
+  * Updated cabal-version in cabal file
+  * Replaced fmap with <$> everywhere
+  * Updated build instructions to be stack-specific
+  * Cleaned up auto-generated cruft in stack.yaml
+  * Merged example sub-project into the main project
+  * Moved tested-with up to ghc 8.0.1
+  * Moved copyright up to 2016
+  * Changed build from cabal to stack
+  * Updated README
+
+
 1.1 (2015-03-27)
 
   * Updated and expanded documentation
