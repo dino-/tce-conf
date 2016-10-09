@@ -1,6 +1,6 @@
 name:                tce-conf
 version:             1.2
-cabal-version:       >= 1.8
+cabal-version:       >= 1.10
 build-type:          Simple
 license:             BSD3
 license-file:        LICENSE
@@ -31,6 +31,7 @@ library
    build-depends:    base >= 3 && < 5,
                      containers
    ghc-options:      -Wall
+   default-language: Haskell2010
 
 test-suite           test-hsmisc
    type:             exitcode-stdio-1.0
@@ -44,6 +45,7 @@ test-suite           test-hsmisc
                      ReadConf
                      TCE.Data.KVConf
                      TCE.Data.ReadConf
+   default-language: Haskell2010
 
 executable KVConf-example
   hs-source-dirs:      app
