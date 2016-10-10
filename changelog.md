@@ -1,3 +1,8 @@
+1.3 (2016-10-10)
+
+   * Added missing files to extra-source-files
+
+
 1.2 (2016-10-09)
 
   * Fixed cabal file for use with stack sdist
