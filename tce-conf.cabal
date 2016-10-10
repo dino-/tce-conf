@@ -16,9 +16,11 @@ tested-with:         GHC >= 8.0.1
 extra-source-files:  changelog.md
                      doc/dev/notes
                      README.md
+                     resources/*.conf
                      stack.yaml
                      TODO.md
                      util/gentags.sh
+                     util/prefs/boring
 
 source-repository    head
    type:             darcs
