@@ -34,7 +34,7 @@
 >           (\c -> (print $ bar c) >> (print $ qux c))
 >           econf
 
-   And then file.conf could contain this Haskell source code:
+   And then read-example.conf could contain this Haskell source code:
 
 >     -- An example config file
 >     
