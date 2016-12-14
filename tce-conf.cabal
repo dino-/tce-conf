@@ -30,8 +30,8 @@ library
    exposed-modules:  TCE.Data.KVConf
                      TCE.Data.ReadConf
    hs-source-dirs:   src
-   build-depends:    base >= 3 && < 5,
-                     containers
+   build-depends:      base >= 3 && < 5
+                     , containers
    ghc-options:      -Wall
    default-language: Haskell2010
 
@@ -39,9 +39,9 @@ test-suite           test-hsmisc
    type:             exitcode-stdio-1.0
    main-is:          test-hsmisc.hs
    hs-source-dirs:   src testsuite
-   build-depends:    base >= 3 && < 5,
-                     containers,
-                     HUnit
+   build-depends:      base >= 3 && < 5
+                     , containers
+                     , HUnit
    ghc-options:      -Wall
    other-modules:    KVConf
                      ReadConf
