@@ -52,7 +52,7 @@ Cons
 
 ## Getting source
 
-- Get the source with darcs: `$ darcs get https://github.com/dino-/tce-conf.git`
+- Get the source with git: `$ git clone https://github.com/dino-/tce-conf.git`
 - If you're just looking, [browse the source](https://github.com/dino-/tce-conf)
 
 And once you have it, building the usual way:
