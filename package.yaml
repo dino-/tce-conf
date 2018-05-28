@@ -1,6 +1,6 @@
 name: tce-conf
 version: '1.5'
-synopsis: Very simple config file reading
+synopsis: Simple config file library supporting key-value or Read instanced data
 description: This package contains modules for runtime reading of very simple config files of the `key=value` style or as a Haskell data structure to be deserialized with `Read`. The modules support files with blank lines and simple single-line comments, but nothing else.
 license: ISC
 author: Dino Morelli
