@@ -3,7 +3,7 @@
 
 ## Synopsis
 
-Very simple config file reading (Haskell)
+Simple config file library supporting key-value or Read instanced data
 
 
 ## Description
