@@ -1,4 +1,8 @@
+{-# OPTIONS_GHC -Wno-unused-top-binds #-}
+-- You don't need this OPTIONS_GHC directive in your code!
+
 import TCE.Data.ReadConf ( readConfig )
+
 
 -- Write your own custom data structure for config, like this:
 data Config = Config
@@ -9,6 +13,8 @@ data Config = Config
    }
    deriving Read  -- Make it an instance of Read
 
+
+main :: IO ()
 main = do
    -- Parse a String containing a single instance of the above data type
    econf <- readConfig <$> readFile "resources/read-example.conf"
@@ -16,5 +22,5 @@ main = do
    -- The result is an Either String Config
    either
       print  -- Failure is reported as a Left
-      (\c -> (print $ bar c) >> (print $ qux c))
+      (\c -> (print . bar $ c) >> (print . qux $ c))
       econf

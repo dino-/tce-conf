@@ -2,6 +2,8 @@ import Data.Map ( lookup )
 import Prelude hiding ( lookup )
 import TCE.Data.KVConf ( parseToMap )
 
+
+main :: IO ()
 main = do
    -- Parse a String into a KVConf datatype
    conf <- parseToMap <$> readFile "resources/kv-example.conf"
