@@ -2,9 +2,9 @@ name:                tce-conf
 version:             1.5
 cabal-version:       >= 1.10
 build-type:          Simple
-license:             BSD3
+license:             ISC
 license-file:        LICENSE
-copyright:           2015-2016 Dino Morelli
+copyright:           2015-2018 Dino Morelli
 author:              Dino Morelli
 maintainer:          Dino Morelli <dino@ui3.info>
 stability:           experimental
@@ -19,12 +19,10 @@ extra-source-files:  changelog.md
                      resources/*.conf
                      stack.yaml
                      TODO.md
-                     util/gentags.sh
-                     util/prefs/boring
 
 source-repository    head
-   type:             darcs
-   location:         http://hub.darcs.net/dino/tce-conf
+   type:             git
+   location:         https://github.com/dino-/tce-conf.git
 
 library
    exposed-modules:  TCE.Data.KVConf
